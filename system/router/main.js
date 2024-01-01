@@ -69,7 +69,7 @@ router.get("/feature/:action", isAuthenticated, (req, res) => {
 		  feature = "search";
 		  break  
 		default:
-		  feature = ""
+		  res.render("404")
 	  }
 	  
 	  res.render("feature/" + action, {

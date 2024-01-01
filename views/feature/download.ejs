@@ -2,171 +2,221 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <meta name="description" content="Download Feature API">
+  <title>Arifzyn API || Feature</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="author" content="Arifzyn">
+  <meta name="robots" content="">
+  <meta name="keywords" content="api, arifzyn api, arifzyn, Arifzyn API">
+  <meta name="description" content="Arifzyn API adalah platform REST API yang handal dan mudah digunakan. Dengan antarmuka yang intuitif, pengguna dapat mengakses dan mengintegrasikan berbagai sumber daya data dengan mudah.">
+  <meta property="og:title" content="Arifzyn API - Arifzyn">
+  <meta property="og:description" content="Arifzyn API adalah platform REST API yang handal dan mudah digunakan. Dengan antarmuka yang intuitif, pengguna dapat mengakses dan mengintegrasikan berbagai sumber daya data dengan mudah.">
   <meta property="og:image" content="https://telegra.ph/file/be7f704ea601970402705.jpg">
-  <title><%= title %>  || Feature</title>
-  <link rel="icon" href="../images/icon.png" type="image/png">
-  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="../images/icon.png" type="" rel="icon">
+  <link href="../images/icon.png" type="" rel="shortcut icon">
+  <link rel="stylesheet" href="../vendor/bootstrap-select/css/bootstrap-select.min.css">
+  <!-- Page level css : Dashboard  -->
+  <link rel="stylesheet" href="../vendor/chartist/css/chartist.min.css">
+  <link rel="stylesheet" href="../vendor/owl-carousel/owl.carousel.css"> <!-- End Page level css : Dashboard  -->
+  <link rel="stylesheet" href="../https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;family=Roboto:wght@100;300;400;500;700;900&amp;display=swap">
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/dark.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 </head>
 
-<body class="dark-mode">
-  <div id="app">
-    <div class="main-wrapper main-wrapper-1">
-      <div class="navbar-bg"></div>
-      <%- include('../layout/navbar.ejs') %>
-      <%- include('../layout/sidebar.ejs') %>
-      <div class="main-content">
-        <section class="section">
-          <div class="section-body">
-            <div class="row">
-              <div class="col-12 col-sm-12 col-lg-6">
-                <div class="card">
-                  <div class="card-body">
-                    <h6 class="text-center mb-3">Downloader API</h6>
-                    <div class="table-responsive text-black text-nowrap">
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text border-0"><i class="fas fa-search"></i></span>
-                        </div> 
-                        <input type="text" class="form-control" id="myInput" onkeyup="searcTable()" placeholder="Type to search">
-                      </div>
-                      <table id="apiTable" class="table table-bordered">
-                        <thead>
-                          <tr class="table-secondary">
-                            <th scope="col">Name</th>
-                            <th scope="col">Method</th>
-                            <th scope="col">Parameter</th>
-                            <th scope="col">Action</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>Tiktok</td>
-                            <td><li class="btn btn-sm btn-primary">GET</li></td>
-                            <td>url</td>
-                            <td><a class="btn btn-primary mb-2" href="/download/tiktok?url=">Detail</a></td>
-                          </tr>
-                          <tr>
-                            <td>Instagram</td>
-                            <td><li class="btn btn-sm btn-primary">GET</li></td>
-                            <td>url</td>
-                            <td><a class="btn btn-primary mb-2" href="/download/instagram?url=">Detail</a></td>
-                          </tr>
-                          <tr>
-                            <td>Facebook</td>
-                            <td><li class="btn btn-sm btn-primary">GET</li></td>
-                            <td>url</td>
-                            <td><a class="btn btn-primary mb-2" href="/download/facebook?url=">Detail</a></td>
-                          </tr>
-                          <tr>
-                            <td>Pinterest</td>
-                            <td><li class="btn btn-sm btn-primary">GET</li>
-                            </td>
-                            <td>url</td>
-                            <td><a class="btn btn-primary mb-2" href="/download/pinterest?url=">Detail</a></td>
-                          </tr>
-                          <tr>
-                            <td>Snackvideo</td>
-                            <td><li class="btn btn-sm btn-primary">GET</li></td>
-                            <td>url</td>
-                            <td><a class="btn btn-primary mb-2" href="/download/snackvideo?url=">Detail</a></td>
-                          </tr>
-                          <tr>
-                            <td>Like</td>
-                            <td><li class="btn btn-sm btn-primary">GET</li></td>
-                            <td>url</td>
-                            <td><a class="btn btn-primary mb-2" href="/download/like?url=">Detail</a></td>
-                          </tr>
-                          <tr>
-                            <td>Cocofun</td>
-                            <td><li class="btn btn-sm btn-primary">GET</li></td>
-                            <td>url</td>
-                            <td><a class="btn btn-primary mb-2" href="/download/cocofun?url=">Detail</a></td>
-                          </tr>
-                          <tr>
-                            <td>Capcut</td>
-                            <td><li class="btn btn-sm btn-primary">GET</li></td>
-                            <td>url</td>
-                            <td><a class="btn btn-primary mb-2" href="/download/capcut?url=">Detail</a></td>
-                          </tr>
-                          <tr>
-                            <td>Sfiledown</td>
-                            <td><li class="btn btn-sm btn-primary">GET</li></td>
-                            <td>url</td>
-                            <td><a class="btn btn-primary mb-2" href="/download/sfiledown?url=">Detail</a></td>
-                          </tr>
-                          <tr>
-                            <td>Gdrivedl</td>
-                            <td><li class="btn btn-sm btn-primary">GET</li></td>
-                            <td>url</td>
-                            <td><a class="btn btn-primary mb-2" href="/download/gdrivedl?url=">Detail</a></td>
-                          </tr>
-                          <tr>
-                            <td>Krakenfiles</td>
-                            <td><li class="btn btn-sm btn-primary">GET</li></td>
-                            <td>url</td>
-                            <td><a class="btn btn-primary mb-2" href="/download/krakenfiles?url=">Detail</a></td>
-                          </tr>
-                          <tr>
-                            <td>Douyin</td>
-                            <td><li class="btn btn-sm btn-primary">GET</li></td>
-                            <td>url</td>
-                            <td><a class="btn btn-primary mb-2" href="/download/douyin?url=">Detail</a></td>
-                          </tr>
-                          <tr>
-                            <td>YouTube Mp4</td>
-                            <td><li class="btn btn-sm btn-primary">GET</li></td>
-                            <td>url</td>
-                            <td><a class="btn btn-primary mb-2" href="/download/ytmp4?url=">Detail</a></td>
-                          </tr>
-                          <tr>
-                            <td>YouTube Mp3</td>
-                            <td><li class="btn btn-sm btn-primary">GET</li></td>
-                            <td>url</td>
-                            <td><a class="btn btn-primary mb-2" href="/download/ytmp3?url=">Detail</a></td>
-                          </tr>
-                          <tr>
-                            <td>YouTube Play</td>
-                            <td><li class="btn btn-sm btn-primary">GET</li></td>
-                            <td>url</td>
-                            <td><a class="btn btn-primary mb-2" href="/download/ytplay?query=">Detail</a></td>
-                          </tr>
-                          <tr>
-                            <td>YouTube Play Mp4</td>
-                            <td><li class="btn btn-sm btn-primary">GET</li></td>
-                            <td>url</td>
-                            <td><a class="btn btn-primary mb-2" href="/download/ytplayvid?query=">Detail</a></td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
+<body>
+  <div id="main-wrapper">
+
+    <%- include('../layout/navbar.ejs') %>
+    <%- include('../layout/sidebar.ejs') %>
+
+    <div class="content-body default-height ">
+      <div class="container-fluid">
+        <div class="page-titles">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)">feature</a></li>
+            <li class="breadcrumb-item active"><a href="javascript:void(0)">download</a></li>
+          </ol>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title">Downloader API</h4>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-responsive-md">
+                    <thead>
+                      <tr>
+                        <th style="width:80px;">#</th>
+                        <th>Name</th>
+                        <th>Parameter</th>
+                        <th>Method</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                       <tr>
+                        <td><strong class="text-black">1</strong></td>
+                        <td>TikTok</td>
+                        <td>url, apikey</td>
+                        <td>GET</td>
+                        <td><span class="badge light badge-success">Active</span></td>
+                        <td><a class="btn btn-primary btn-sm" href="/download/tiktok?url=&apikey=<%= apikey %>">Detail
+                      </tr>
+                      <tr>
+                        <td><strong class="text-black">2</strong></td>
+                        <td>Instagram</td>
+                        <td>url, apikey</td>
+                        <td>GET</td>
+                        <td><span class="badge light badge-success">Active</span></td>
+                        <td><a class="btn btn-primary btn-sm" href="/download/instagram?url=&apikey=<%= apikey %>">Detail
+                      </tr>
+                      <tr>
+                        <td><strong class="text-black">3</strong></td>
+                        <td>Facebook</td>
+                        <td>url, apikey</td>
+                        <td>GET</td>
+                        <td><span class="badge light badge-success">Active</span></td>
+                        <td><a class="btn btn-primary btn-sm" href="/download/facebook?url=&apikey=<%= apikey %>">Detail
+                      </tr>
+                      <tr>
+                        <td><strong class="text-black">4</strong></td>
+                        <td>Pinterest</td>
+                        <td>url, apikey</td>
+                        <td>GET</td>
+                        <td><span class="badge light badge-success">Active</span></td>
+                        <td><a class="btn btn-primary btn-sm" href="/download/pinterest?url=&apikey=<%= apikey %>">Detail
+                      </tr>
+                      <tr>
+                        <td><strong class="text-black">5</strong></td>
+                        <td>SnackVideo</td>
+                        <td>url, apikey</td>
+                        <td>GET</td>
+                        <td><span class="badge light badge-success">Active</span></td>
+                        <td><a class="btn btn-primary btn-sm" href="/download/snackvideo?url=&apikey=<%= apikey %>">Detail
+                      </tr>
+                      <tr>
+                        <td><strong class="text-black">6</strong></td>
+                        <td>Like</td>
+                        <td>url, apikey</td>
+                        <td>GET</td>
+                        <td><span class="badge light badge-success">Active</span></td>
+                        <td><a class="btn btn-primary btn-sm" href="/download/like?url=&apikey=<%= apikey %>">Detail
+                      </tr>
+                      <tr>
+                        <td><strong class="text-black">7</strong></td>
+                        <td>Cocofun</td>
+                        <td>url, apikey</td>
+                        <td>GET</td>
+                        <td><span class="badge light badge-success">Active</span></td>
+                        <td><a class="btn btn-primary btn-sm" href="/download/cocofun?url=&apikey=<%= apikey %>">Detail
+                      </tr>
+                      <tr>
+                        <td><strong class="text-black">8</strong></td>
+                        <td>Capcut</td>
+                        <td>url, apikey</td>
+                        <td>GET</td>
+                        <td><span class="badge light badge-success">Active</span></td>
+                        <td><a class="btn btn-primary btn-sm" href="/download/capcut?url=&apikey=<%= apikey %>">Detail
+                      </tr>
+                      <tr>
+                        <td><strong class="text-black">9</strong></td>
+                        <td>Sfiledown</td>
+                        <td>url, apikey</td>
+                        <td>GET</td>
+                        <td><span class="badge light badge-success">Active</span></td>
+                        <td><a class="btn btn-primary btn-sm" href="/download/sfiledown?url=&apikey=<%= apikey %>">Detail
+                      </tr>
+                      <tr>
+                        <td><strong class="text-black">10</strong></td>
+                        <td>Gdrivedl</td>
+                        <td>url, apikey</td>
+                        <td>GET</td>
+                        <td><span class="badge light badge-success">Active</span></td>
+                        <td><a class="btn btn-primary btn-sm" href="/download/gdrivedl?url=&apikey=<%= apikey %>">Detail
+                      </tr>
+                      <tr>
+                        <td><strong class="text-black">11</strong></td>
+                        <td>Krakenfiles</td>
+                        <td>url, apikey</td>
+                        <td>GET</td>
+                        <td><span class="badge light badge-success">Active</span></td>
+                        <td><a class="btn btn-primary btn-sm" href="/download/krakenfiles?url=&apikey=<%= apikey %>">Detail
+                      </tr>
+                      <tr>
+                        <td><strong class="text-black">12</strong></td>
+                        <td>Douyin</td>
+                        <td>url, apikey</td>
+                        <td>GET</td>
+                        <td><span class="badge light badge-success">Active</span></td>
+                        <td><a class="btn btn-primary btn-sm" href="/download/douyin?url=&apikey=<%= apikey %>">Detail
+                      </tr>
+                      <tr>
+                        <td><strong class="text-black">13</strong></td>
+                        <td>Ytmp4</td>
+                        <td>url, apikey</td>
+                        <td>GET</td>
+                        <td><span class="badge light badge-success">Active</span></td>
+                        <td><a class="btn btn-primary btn-sm" href="/download/ytmp4?url=&apikey=<%= apikey %>">Detail
+                      </tr>
+                      <tr>
+                        <td><strong class="text-black">14</strong></td>
+                        <td>Ytmp3</td>
+                        <td>url, apikey</td>
+                        <td>GET</td>
+                        <td><span class="badge light badge-success">Active</span></td>
+                        <td><a class="btn btn-primary btn-sm" href="/download/ytmp3?url=&apikey=<%= apikey %>">Detail
+                      </tr>
+                      <tr>
+                        <td><strong class="text-black">15</strong></td>
+                        <td>Ytplay</td>
+                        <td>url, apikey</td>
+                        <td>GET</td>
+                        <td><span class="badge light badge-success">Active</span></td>
+                        <td><a class="btn btn-primary btn-sm" href="/download/ytplay?url=&apikey=<%= apikey %>">Detail
+                      </tr>
+                      <tr>
+                        <td><strong class="text-black">16</strong></td>
+                        <td>Ytplayvid</td>
+                        <td>url, apikey</td>
+                        <td>GET</td>
+                        <td><span class="badge light badge-success">Active</span></td>
+                        <td><a class="btn btn-primary btn-sm" href="/download/ytplayvid?url=&apikey=<%= apikey %>">Detail
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
       </div>
+
     </div>
-    <footer class="footer mt-auto py-3">
-      <div class="container text-center">
-        <p class="text-muted">
-          <%= footer %>
-        </p>
+    <footer class="footer">
+      <div class="copyright">
+        <p>Copyright © Designed &amp; Developed by <a href="http://github.com/ArifzynXD" target="_blank"><%= config.footer %></a> 2023</p>
       </div>
     </footer>
   </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="../modules/bootstrap.min.js"></script>
-  <script src="../modules/jquery.nicescroll.min.js"></script>
-  <script src="../js/dashboard.js"></script>
-  <script src="../js/stisla.js"></script>
-  <script src="../js/scripts.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="../vendor/global/global.min.js"></script>
+  <script src="../vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+  <script src="../vendor/chart-js/chart.bundle.min.js"></script>
+  <script src="../vendor/owl-carousel/owl.carousel.js"></script>
+  <script src="../vendor/peity/jquery.peity.min.js"></script>
+  <script src="../vendor/apexchart/apexchart.js"></script>
+  <script src="../js/dashboard/dashboard-1.js"></script>
+  <script src="../js/custom.min.js"></script>
+  <script src="../js/deznav-init.js"></script>
 </body>
 
 </html>

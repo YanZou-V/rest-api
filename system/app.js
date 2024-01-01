@@ -103,11 +103,7 @@ app.use("/admin", admin)
 app.use("/", auth)
 
 app.use(function (req, res, next) {
-  res.status(404).json({
-    status: 404,
-    creator: config.options.creator,
-    message: "Page Not Found - 404"
-  })
+  res.status(404).render("404")
 })
 
 connectToMongoDb()
