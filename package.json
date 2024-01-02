@@ -2,10 +2,10 @@
   "name": "rest-api",
   "version": "1.0.0",
   "description": "Simple Rest Api.",
-  "main": "index.js",
+  "main": "system/app.js",
   "scripts": {
-    "start": "node index.js"
-  },
+    "start": "node system/index.js"
+  }, 
   "keywords": [
     "api"
   ],

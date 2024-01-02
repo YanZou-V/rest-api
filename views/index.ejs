@@ -23,9 +23,10 @@
   <link rel="stylesheet" href="vendor/owl-carousel/owl.carousel.css"> <!-- End Page level css : Dashboard  -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;family=Roboto:wght@100;300;400;500;700;900&amp;display=swap">
   <link rel="stylesheet" href="css/style.css">
-
+  
 </head>
 <body>
+
   <div id="main-wrapper">
   
     <%- include('./layout/navbar.ejs') %>
@@ -57,12 +58,12 @@
                 <div class="card avtivity-card">
                   <div class="card-body">
                     <div class="media align-items-center">
-                      <span class="activity-icon bgl-secondary  me-md-4 me-3">
+                      <span class="activity-icon bgl-secondary  me-md-4 me-3 light">
                          <li class="fas fa-clock"></li>
                       </span>
                       <div class="media-body">
                         <p class="fs-14 mb-2">IP Address</p>
-                        <span class="title text-black font-w600">...</span>
+                        <span class="title text-black font-w600" id="ipAddress"></span>
                       </div>
                     </div>
                   </div>
@@ -94,7 +95,7 @@
                       </span>
                       <div class="media-body">
                         <p class="fs-14 mb-2">Clock</p>
-                        <span class="title text-black font-w600">...</span>
+                        <span class="title text-black font-w600" id="clock"></span>
                       </div>
                     </div>
                   </div>
@@ -108,16 +109,16 @@
               <div class="card-body">
               <div class="media align-items-center">
                 <span class="activity-icon bgl-primary me-md-4 me-3">
-                  <li class="fas fa-cloud-upload-alt"></li>
+                  <li class="fas fa-eye"></li>
                 </span>
                   <div class="media-body">
-                    <p class="fs-14 mb-2">API Request</p>
-                    <span class="title text-black font-w600">...</span>
+                    <p class="fs-14 mb-2">Visitor</p>
+                    <span class="title text-black font-w600" id="visitor"></span>
                   </div>
                   </div>
                 </div>
               <div class="effect bg-primary"></div>
-            </div>
+            </div> 
           </div>
         </div>
       </div>
@@ -130,6 +131,21 @@
         </div>
       </footer>
    </div> 
+   
+<div class="col-sm-6" id="chatCard">
+  <div class="position-fixed" style="top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000;">
+    <div class="card" style="width: 500px; max-height: 80vh; overflow: auto;">
+      <div class="card-header">
+        <h5 class="card-title">Arifzyn API ChatBox</h5>
+        <span class="close-btn" onclick="closeChatCard()">&times;</span>
+      </div> 
+      <div class="card-body">
+        <iframe src="https://www5.cbox.ws/box/?boxid=945908&boxtag=AGjei6" width="100%" height="500" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="vendor/global/global.min.js"></script>
     <script src="vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
@@ -140,7 +156,25 @@
     <script src="js/dashboard/dashboard-1.js"></script>
     <script src="js/custom.min.js"></script>
     <script src="js/deznav-init.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script>
+  function openXboxChat() {
+    var chatCard = document.getElementById("chatCard");
+    chatCard.style.display = "block";
+  }
 
+  function closeChatCard() {
+    var chatCard = document.getElementById("chatCard");
+    chatCard.style.display = "none";
+  }
+  
+  document.addEventListener("DOMContentLoaded", function() {
+    closeChatCard();
+  });
+  
+  var jsonString = JSON.stringify("<%= config %>", null, 2);
+  document.getElementById("jsonDisplay").textContent = jsonString;
+</script>
 </body>
 
 </html>
