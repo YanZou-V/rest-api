@@ -20,24 +20,25 @@
   <link rel="stylesheet" href="vendor/bootstrap-select/css/bootstrap-select.min.css">
 
   <link rel="stylesheet" href="vendor/chartist/css/chartist.min.css">
-  <link rel="stylesheet" href="vendor/owl-carousel/owl.carousel.css"> <!-- End Page level css : Dashboard  -->
+  <link rel="stylesheet" href="vendor/owl-carousel/owl.carousel.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;family=Roboto:wght@100;300;400;500;700;900&amp;display=swap">
   <link rel="stylesheet" href="css/style.css">
-  
+
 </head>
+
 <body>
 
   <div id="main-wrapper">
-  
+
     <%- include('./layout/navbar.ejs') %>
     <%- include('./layout/sidebar.ejs') %>
-    
+
     <div class="content-body default-height ">
       <div class="container-fluid">
         <div class="row">
           <div class="col-xl-6 col-xxl-12">
             <div class="row">
-            
+
               <div class="col-sm-6">
                 <div class="card avtivity-card">
                   <div class="card-body">
@@ -59,7 +60,7 @@
                   <div class="card-body">
                     <div class="media align-items-center">
                       <span class="activity-icon bgl-secondary  me-md-4 me-3 light">
-                         <li class="fas fa-clock"></li>
+                        <li class="fas fa-clock"></li>
                       </span>
                       <div class="media-body">
                         <p class="fs-14 mb-2">IP Address</p>
@@ -77,7 +78,7 @@
                       <span class="activity-icon bgl-danger me-md-4 me-3">
                         <li class="fas fa-user"></li>
                       </span>
-                      <div class="media-body"> 
+                      <div class="media-body">
                         <p class="fs-14 mb-2">Users Count</p>
                         <span class="title text-black font-w600">...</span>
                       </div>
@@ -107,74 +108,153 @@
           <div class="col-sm-6">
             <div class="card avtivity-card">
               <div class="card-body">
-              <div class="media align-items-center">
-                <span class="activity-icon bgl-primary me-md-4 me-3">
-                  <li class="fas fa-eye"></li>
-                </span>
+                <div class="media align-items-center">
+                  <span class="activity-icon bgl-primary me-md-4 me-3">
+                    <li class="fas fa-eye"></li>
+                  </span>
                   <div class="media-body">
                     <p class="fs-14 mb-2">Visitor</p>
                     <span class="title text-black font-w600" id="visitor"></span>
                   </div>
+                </div>
+              </div>
+              <div class="effect bg-primary"></div>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="row">
+              <div class="col-xl-12">
+                <div class="card">
+                  <div class="card-header d-sm-flex d-block pb-0 border-0">
+                    <div class="me-auto pe-3">
+                      <h4 class="text-black font-w600 fs-20">Anime Character</h4>
+                      <p class="fs-13 mb-0">Cuma Gabut Doang.</p>
+                    </div>
+                  </div>
+                  <div class="card-body pt-2">
+                    <div class="testimonial-one owl-carousel">
+
+                      <div class="items">
+                        <div class="card text-center">
+                          <div class="card-body">
+                            <img src="https://i.ibb.co/z5TgZK7/117148bf6dfe9925a45c5396166cf0c0.jpg" alt="">
+                            <h5 class="fs-16 font-w500 mb-1"><a href="https://i.ibb.co/z5TgZK7/117148bf6dfe9925a45c5396166cf0c0.jpg" class="text-black">Katou Megumi</a></h5>
+                            <p class="fs-14">...</p>
+                            <div class="d-flex align-items-center justify-content-center">
+                              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.09569 20C4.80437 19.9988 4.51677 19.9344 4.25273 19.8113C3.98868 19.6881 3.75447 19.5091 3.56624 19.2866C3.37801 19.0641 3.24024 18.8034 3.16243 18.5225C3.08462 18.2415 3.06862 17.9471 3.11554 17.6593L3.88905 12.8902L0.569441 9.45986C0.312024 9.19466 0.132451 8.86374 0.0503661 8.50328C-0.0317185 8.14282 -0.0131526 7.76671 0.104033 7.4161C0.221219 7.06549 0.43251 6.75388 0.714792 6.51537C0.997074 6.27685 1.33947 6.12062 1.70453 6.06376L6.20048 5.37325L8.18158 1.13817C8.34755 0.796915 8.60606 0.509234 8.92762 0.307978C9.24917 0.106721 9.6208 0 10.0001 0C10.3793 0 10.751 0.106721 11.0725 0.307978C11.3941 0.509234 11.6526 0.796915 11.8186 1.13817L13.7931 5.36719L18.2955 6.06376C18.6606 6.12062 19.003 6.27685 19.2852 6.51537C19.5675 6.75388 19.7788 7.06549 19.896 7.4161C20.0132 7.76671 20.0318 8.14282 19.9497 8.50328C19.8676 8.86374 19.688 9.19466 19.4306 9.45986L16.1144 12.8765L16.885 17.66C16.9463 18.0327 16.9014 18.4152 16.7556 18.7635C16.6097 19.1119 16.3687 19.4121 16.0602 19.6297C15.7517 19.8473 15.3882 19.9735 15.0113 19.994C14.6344 20.0144 14.2593 19.9281 13.9292 19.7451L10.0026 17.5635L6.07117 19.7451C5.77302 19.9118 5.43724 19.9996 5.09569 20Z" fill="#FFAA29" />
+                              </svg>
+                              <span class="fs-14 d-block ms-2 pe-2 me-2 border-end text-black font-w500">9.9</span>
+                              <a href="#" class="btn-link fs-14">Add Favorit</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="items">
+                        <div class="card text-center">
+                          <div class="card-body">
+                            <img src="https://i.ibb.co/VjQG2CX/9bb2bd8a0074d22f110491763bd1617e.jpg" alt="">
+                            <h5 class="fs-16 font-w500 mb-1"><a href="https://i.ibb.co/VjQG2CX/9bb2bd8a0074d22f110491763bd1617e.jpg" class="text-black">Shina Mahiru</a></h5>
+                            <p class="fs-14">...</p>
+                            <div class="d-flex align-items-center justify-content-center">
+                              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.09569 20C4.80437 19.9988 4.51677 19.9344 4.25273 19.8113C3.98868 19.6881 3.75447 19.5091 3.56624 19.2866C3.37801 19.0641 3.24024 18.8034 3.16243 18.5225C3.08462 18.2415 3.06862 17.9471 3.11554 17.6593L3.88905 12.8902L0.569441 9.45986C0.312024 9.19466 0.132451 8.86374 0.0503661 8.50328C-0.0317185 8.14282 -0.0131526 7.76671 0.104033 7.4161C0.221219 7.06549 0.43251 6.75388 0.714792 6.51537C0.997074 6.27685 1.33947 6.12062 1.70453 6.06376L6.20048 5.37325L8.18158 1.13817C8.34755 0.796915 8.60606 0.509234 8.92762 0.307978C9.24917 0.106721 9.6208 0 10.0001 0C10.3793 0 10.751 0.106721 11.0725 0.307978C11.3941 0.509234 11.6526 0.796915 11.8186 1.13817L13.7931 5.36719L18.2955 6.06376C18.6606 6.12062 19.003 6.27685 19.2852 6.51537C19.5675 6.75388 19.7788 7.06549 19.896 7.4161C20.0132 7.76671 20.0318 8.14282 19.9497 8.50328C19.8676 8.86374 19.688 9.19466 19.4306 9.45986L16.1144 12.8765L16.885 17.66C16.9463 18.0327 16.9014 18.4152 16.7556 18.7635C16.6097 19.1119 16.3687 19.4121 16.0602 19.6297C15.7517 19.8473 15.3882 19.9735 15.0113 19.994C14.6344 20.0144 14.2593 19.9281 13.9292 19.7451L10.0026 17.5635L6.07117 19.7451C5.77302 19.9118 5.43724 19.9996 5.09569 20Z" fill="#FFAA29" />
+                              </svg>
+                              <span class="fs-14 d-block ms-2 pe-2 me-2 border-end text-black font-w500">8.5</span>
+                              <a href="#" class="btn-link fs-14">Add Favorit</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
                   </div>
                 </div>
-              <div class="effect bg-primary"></div>
-            </div> 
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-sm-6" id="chatCard">
+          <div class="position-fixed" style="top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000;">
+            <div class="card" style="width: 500px; max-height: 80vh; overflow: auto;">
+              <div class="card-header">
+                <h5 class="card-title">Arifzyn API ChatBox</h5>
+                <span class="close-btn" onclick="closeChatCard()">&times;</span>
+              </div>
+              <div class="card-body">
+                <iframe src="https://www5.cbox.ws/box/?boxid=945908&boxtag=AGjei6" width="100%" height="500" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+              </div>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
     <footer class="footer">
-        <div class="copyright">
-          <p>Copyright © Designed &amp; Developed by <a href="http://github.com/ArifzynXD" target="_blank">Arifzyn
-              API</a> 2023
-          </p>
-        </div>
-      </footer>
-   </div> 
-   
-<div class="col-sm-6" id="chatCard">
-  <div class="position-fixed" style="top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000;">
-    <div class="card" style="width: 500px; max-height: 80vh; overflow: auto;">
-      <div class="card-header">
-        <h5 class="card-title">Arifzyn API ChatBox</h5>
-        <span class="close-btn" onclick="closeChatCard()">&times;</span>
-      </div> 
-      <div class="card-body">
-        <iframe src="https://www5.cbox.ws/box/?boxid=945908&boxtag=AGjei6" width="100%" height="500" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+      <div class="copyright">
+        <p>Copyright © Designed &amp; Developed by <a href="http://github.com/ArifzynXD" target="_blank">Arifzyn
+            API</a> 2023
+        </p>
       </div>
-    </div>
+    </footer>
   </div>
-</div>
 
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="vendor/global/global.min.js"></script>
-    <script src="vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
-    <script src="vendor/chart-js/chart.bundle.min.js"></script>
-    <script src="vendor/owl-carousel/owl.carousel.js"></script>
-    <script src="vendor/peity/jquery.peity.min.js"></script>
-    <script src="vendor/apexchart/apexchart.js"></script>
-    <script src="js/dashboard/dashboard-1.js"></script>
-    <script src="js/custom.min.js"></script>
-    <script src="js/deznav-init.js"></script>
-    <script src="js/dashboard.js"></script>
-    <script>
-  function openXboxChat() {
-    var chatCard = document.getElementById("chatCard");
-    chatCard.style.display = "block";
-  }
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="vendor/global/global.min.js"></script>
+  <script src="vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+  <script src="vendor/chart-js/chart.bundle.min.js"></script>
+  <script src="vendor/owl-carousel/owl.carousel.js"></script>
+  <script src="vendor/peity/jquery.peity.min.js"></script>
+  <script src="vendor/apexchart/apexchart.js"></script>
+  <script src="js/dashboard/dashboard-1.js"></script>
+  <script src="js/custom.min.js"></script>
+  <script src="js/deznav-init.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script>
+    function carouselReview() {
+      /*  testimonial one function by = owl.carousel.js */
+      jQuery('.testimonial-one').owlCarousel({
+        nav: true,
+        loop: true,
+        autoplay: true,
+        margin: 10,
+        dots: false,
+        left: true,
+        navText: ['<i class="fa fa-chevron-left" aria-hidden="true"></i>', '<i class="fa fa-chevron-right" aria-hidden="true"></i>'],
+        responsive: {
+          0: {
+            items: 1
+          },
+          484: {
+            items: 2
+          },
+          882: {
+            items: 3
+          },
+          1200: {
+            items: 2
+          },
 
-  function closeChatCard() {
-    var chatCard = document.getElementById("chatCard");
-    chatCard.style.display = "none";
-  }
-  
-  document.addEventListener("DOMContentLoaded", function() {
-    closeChatCard();
-  });
-  
-  var jsonString = JSON.stringify("<%= config %>", null, 2);
-  document.getElementById("jsonDisplay").textContent = jsonString;
-</script>
+          1540: {
+            items: 3
+          },
+          1740: {
+            items: 4
+          }
+        }
+      })
+    }
+    jQuery(window).on('load', function() {
+      setTimeout(function() {
+        carouselReview();
+      }, 1000);
+    });
+  </script>
 </body>
 
 </html>

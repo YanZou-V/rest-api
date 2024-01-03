@@ -44,3 +44,19 @@ function searcTable() {
     }
   }
 }
+
+// script.js
+
+function openXboxChat() {
+  var chatCard = document.getElementById("chatCard");
+  chatCard.style.display = "block";
+}
+
+function closeChatCard() {
+  var chatCard = document.getElementById("chatCard");
+  chatCard.style.display = "none";
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  closeChatCard();
+});
