@@ -24,6 +24,7 @@ const data = mongoose.Schema({
   isAdmin: { type: Boolean },
   premium: { type: Boolean },
   premiumTime: { type: Number },
+  defaultKey: { type: String }
 });
 
 exports.db = mongoose.model('user', data);

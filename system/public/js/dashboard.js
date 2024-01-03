@@ -49,7 +49,11 @@ function searcTable() {
 
 function openXboxChat() {
   var chatCard = document.getElementById("chatCard");
-  chatCard.style.display = "block";
+  if (chatCard.style.display === "block") {
+    chatCard.style.display = "none";
+  } else { 
+    chatCard.style.display = "block";
+  }
 }
 
 function closeChatCard() {

@@ -2,149 +2,173 @@
 <html lang="en">
 
 <head>
- <meta charset="UTF-8">
- <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
- <title> Arifzyn API || ADMIN DASHBOARD </title>
- <link rel="icon" href="images/icon.png" type="image/png">
- <link rel="stylesheet" href="css/bootstrap.min.css">
- <link rel="stylesheet" href="css/style.css">
- <link rel="stylesheet" href="css/dark.css">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
- <style>
-  .hidden {
-   display: none;
-  }
+  <title>Arifzyn API || Admin Pages</title>
 
-  .btn-outline-secondary {
-   background-color: #343a40;
-   color: #ffffff;
-  }
- </style>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="author" content="Arifzyn">
+  <meta name="keywords" content="api, arifzyn api, arifzyn, Arifzyn API">
+  <meta name="description" content="Arifzyn API adalah platform REST API yang handal dan mudah digunakan. Dengan antarmuka yang intuitif, pengguna dapat mengakses dan mengintegrasikan berbagai sumber daya data dengan mudah.">
+  <meta property="og:title" content="Arifzyn API - Arifzyn">
+  <meta property="og:description" content="Arifzyn API adalah platform REST API yang handal dan mudah digunakan. Dengan antarmuka yang intuitif, pengguna dapat mengakses dan mengintegrasikan berbagai sumber daya data dengan mudah.">
+  <meta property="og:image" content="https://telegra.ph/file/be7f704ea601970402705.jpg">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="images/icon.png" type="" rel="icon">
+  <link href="images/icon.png" type="" rel="shortcut icon">
+  <link rel="stylesheet" href="vendor/bootstrap-select/css/bootstrap-select.min.css">
+
+  <link rel="stylesheet" href="vendor/chartist/css/chartist.min.css">
+  <link rel="stylesheet" href="vendor/owl-carousel/owl.carousel.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;family=Roboto:wght@100;300;400;500;700;900&amp;display=swap">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .hide {
+      display: none;
+    }
+  </style>
 </head>
 
-<body class="dark-mode">
- <div class="main-wrapper">
-  <div class="main-content">
-  <% if (message.error) { %>
-    <div class="alert alert-danger">
-      <%= message.error %>
-    </div>
-  <% } %>
-  
-  <% if (message.success) { %>
-    <div class="alert alert-success">
-      <%= message.success %>
-    </div>
-  <% } %>
-   <section class="section">
-    <div class="section-body">
-     <div class="row">
-      <div class="col-lg-4">
-       <div class="card" id="homeadmin">
-        <div class="card-body">
-         <h5 class="text-center mb-4">Home Admin</h5>
-         <div class="text-center">
-          <a href="#" class="btn btn-outline-secondary text-uppercase btn-block mx-auto" onclick="showCard('addprem')">Add Premium</a>
-          <a href="#" class="btn btn-outline-secondary text-uppercase btn-block mx-auto" onclick="showCard('delprem')">Delete Premium</a>
-          <a href="#" class="btn btn-outline-secondary text-uppercase btn-block mx-auto" onclick="showCard('listprem')">List Premium</a>
-         </div>
-        </div>
-       </div>
-       <div class="card hidden" id="addprem">
-        <a href="#" class="btn btn-transparent position-absolute start-0 top-0 mt-3 ms-3" onclick="showCard('homeadmin')">
-         <i class="fas fa-arrow-left"></i>
-        </a>
-        <div class="card-body">
-         <h5 class="text-center mb-3">ADD PREMIUM</h5>
-         <form action="/admin/premium/add" method="POST">
-          <div class="form-group text-center">
-           <label for="username" class="form-label text-white">USER NAME</label>
-           <input type="text" name="username" class="form-control" id="username" required placeholder="Masukkan User Name">
+<body>
+
+  <div id="main-wrapper">
+
+    <%- include('./layout/navbar.ejs') %>
+    <%- include('./layout/sidebar.ejs') %>
+    
+    <div class="content-body default-height ">
+      <div class="container-fluid">
+        <div class="row">
+          <%- include('./layout/alert.ejs') %>
+          
+          <!-- Select Options -->
+          <div class="col-xl-6 col-lg-6">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title">List Admin Page</h4>
+              </div>
+              <div class="card-body">
+                <div class="basic-form">
+                  <form>
+                    <div class="form-group mb-4">
+                      <select id="actionSelect" class="form-control default-select form-control-sm">
+                        <option selected>Select Here</option>
+                        <option value="addPrem">Add Premium</option>
+                        <option value="delPrem">Delete Premium</option>
+                        <option value="listPrem">List Premium</option>
+                      </select>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="form-group text-center">
-           <label for="days" class="form-label text-white">Number of days</label>
-           <input type="text" name="days" class="form-control" id="days" required placeholder="Masukkan Jumlah Hari">
+          <!-- Add Premium Form -->
+          <div class="col-lg-4">
+            <div class="card" id="addprem" style="display: block;">
+              <a href="#" class="btn btn-transparent position-absolute start-0 top-0 mt-3 ms-3" onclick="showCard('homeadmin')">
+                <i class="fas fa-arrow-left"></i>
+              </a>
+              <div class="card-body">
+                <h5 class="text-center mb-3">ADD PREMIUM</h5>
+                <form action="/admin/premium/add" method="POST">
+                  <div class="form-group text-center">
+                    <label for="username" class="form-label text-white">USER NAME</label>
+                    <input type="text" name="username" class="form-control" id="username" required placeholder="Masukkan User Name">
+                  </div>
+                  <div class="form-group text-center">
+                    <label for="days" class="form-label text-white">Number of days</label>
+                    <input type="text" name="days" class="form-control" id="days" required placeholder="Masukkan Jumlah Hari">
+                  </div>
+                  <div class="form-group text-center">
+                    <label for="token" class="form-label text-white">Token</label>
+                    <input type="text" name="token" class="form-control" id="token" required placeholder="Masukkan Token">
+                  </div>
+                  <div class="form-group text-center">
+                    <button type="submit" class="btn btn-outline-secondary text-uppercase btn-block mx-auto">Submit</button>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
-          <div class="form-group text-center">
-           <label for="token" class="form-label text-white">Token</label>
-           <input type="text" name="token" class="form-control" id="token" required placeholder="Masukkan Token">
+          <!-- End Add Premium Form -->
+          <!-- Delete Premium Form -->
+          <div class="col-lg-4">
+            <div class="card" id="delprem" style="display: block;">
+              <a href="#" class="btn btn-transparent position-absolute start-0 top-0 mt-3 ms-3" onclick="showCard('homeadmin')">
+                <i class="fas fa-arrow-left"></i>
+              </a>
+              <div class="card-body">
+                <h5 class="text-center mb-3">DELETE PREMIUM</h5>
+                <form action="/admin/premium/delete" method="POST">
+                  <div class="form-group text-center">
+                    <label for="username" class="form-label text-white">USER NAME</label>
+                    <input type="text" name="username" class="form-control" id="username" required placeholder="Masukkan User Name">
+                  </div>
+                  <div class="form-group text-center">
+                    <label for="token" class="form-label text-white">Token</label>
+                    <input type="text" name="token" class="form-control" id="token" required placeholder="Masukkan Token">
+                  </div>
+                  <div class="form-group text-center">
+                    <button type="submit" class="btn btn-outline-secondary text-uppercase btn-block mx-auto">Submit</button>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
-          <div class="form-group text-center">
-           <button type="submit" class="btn btn-outline-secondary text-uppercase btn-block mx-auto">Submit</button>
-          </div>
-         </form>
+          <!-- End Delete Premium Form -->
+
         </div>
-       </div>
-       <div class="card hidden" id="delprem">
-        <a href="#" class="btn btn-transparent position-absolute start-0 top-0 mt-3 ms-3" onclick="showCard('homeadmin')">
-         <i class="fas fa-arrow-left"></i>
-        </a>
-        <div class="card-body">
-         <h5 class="text-center mb-3">DELETE PREMIUM</h5>
-        </div>
-       </div>
-       <div class="card hidden" id="listprem">
-        <a href="#" class="btn btn-transparent position-absolute start-0 top-0 mt-3 ms-3" onclick="showCard('homeadmin')">
-         <i class="fas fa-arrow-left"></i>
-        </a>
-        <div class="card-body">
-         <h5 class="text-center mb-3">LIST PREMIUM</h5>
-         <ul>
-         <div id="listprems"></div>
-         </ul>
-        </div>
-       </div>
       </div>
-     </div>
     </div>
+    <footer class="footer">
+      <div class="copyright">
+        <p>Copyright © Designed &amp; Developed by <a href="http://github.com/ArifzynXD" target="_blank">Arifzyn
+            API</a> 2023
+        </p>
+      </div>
+    </footer>
   </div>
- </div>
- </section>
- </div>
- </div>
- <script>
-  function showCard(cardId) {
-   // Sembunyikan semua card
-   var cards = document.querySelectorAll('.card');
-   cards.forEach(function(card) {
-    card.classList.add('hidden');
-   });
 
-   // Tampilkan card yang sesuai dengan ID yang diberikan
-   var selectedCard = document.getElementById(cardId);
-   if (selectedCard) {
-    selectedCard.classList.remove('hidden');
-   }
-  }
- </script>
- <script>
-  let txt = '';
-  fetch("/admin/listprem")
-    .then(response => response.json())
-    .then(data => {
-      data.forEach((x, i) => {
-        txt += `<li>${i + 1}. ${x.name}</li>\n`;
-        txt += `<li>${x.expired == 0 ? "No Expired" : timer(x.expired)}</li>\n`; 
-      });
-      document.getElementById('listprems').innerHTML = `<ul>${txt}</ul>`;
-    })
-    .catch(error => {
-      console.error('Error fetching data:', error);
-    });
-    function timer(milliseconds) {
-  const days = Math.floor(milliseconds / (24 * 60 * 60 * 1000));
-  const hours = Math.floor((milliseconds % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
-  const minutes = Math.floor((milliseconds % (60 * 60 * 1000)) / (60 * 1000));
-  const seconds = Math.floor((milliseconds % (60 * 1000)) / 1000);
-
-  return `${days} day ${hours} hour ${minutes} minute ${seconds} second`;
-}
- </script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
- <script src="modules/bootstrap.min.js"></script>
- <script src="modules/jquery.nicescroll.min.js"></script>
- <script src="js/stisla.js"></script>
- <script src="js/scripts.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="vendor/global/global.min.js"></script>
+  <script src="vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+  <script src="vendor/chart-js/chart.bundle.min.js"></script>
+  <script src="vendor/owl-carousel/owl.carousel.js"></script>
+  <script src="vendor/peity/jquery.peity.min.js"></script>
+  <script src="vendor/apexchart/apexchart.js"></script>
+  <script src="js/dashboard/dashboard-1.js"></script>
+  <script src="js/custom.min.js"></script>
+  <script src="js/deznav-init.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script>
+    const selectElement = document.getElementById('actionSelect');
+  
+    // Function to show/hide the corresponding sections
+    function toggleSections() {
+      const addPremSection = document.getElementById('addprem');
+      const delPremSection = document.getElementById('delprem');
+  
+      // Reset display property for all sections
+      addPremSection.style.display = 'none';
+      delPremSection.style.display = 'none';
+  
+      // Show the selected section
+      if (selectElement.value === 'addPrem') {
+        addPremSection.style.display = 'block';
+      } else if (selectElement.value === 'delPrem') {
+        delPremSection.style.display = 'block';
+      }
+    }
+  
+    // Add an event listener to trigger the function when the select value changes
+    selectElement.addEventListener('change', toggleSections);
+  
+    // Call the function initially to set the initial state
+    toggleSections();
+  </script>
 </body>
 
 </html>
