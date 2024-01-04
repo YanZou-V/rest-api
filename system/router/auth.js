@@ -8,7 +8,7 @@ router.get("/auth/login", (req, res) => {
 	if (req.isAuthenticated()) {
 		return res.redirect('/dashboard');
     } else {
-    	return res.render('auth', { messages: req.flash() });
+    	return res.render('auth', { message: req.flash() });
     }
 })
    
