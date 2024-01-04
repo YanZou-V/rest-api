@@ -47,6 +47,7 @@ const updateExpiredPremium = async (user) => {
   if (user.premium && user.premiumTime <= Date.now()) {
     user.premium = false;
     user.premiumTime = 0;
+    user.apikey = user.defaultKey
     await user.save();
     console.log(`Premium expired for user: ${user.username}`);
   }

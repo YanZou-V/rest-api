@@ -17,16 +17,18 @@ module.exports = function(passport) {
     		return done(null, users)
     	} else {
     		const keys = await randomText(12)
+			const key = "AR-" + keys
     		const obj = {
     			googleId: profile.id,
     			username: profile.displayName,
     			email: profile.emails[0].value,
     			limit: config.options.limit || 25,
     			profile: profile.photos[0].value,
-    			apikey: "AR-" + keys,
+    			apikey: key,
     			isAdmin: false,
     			premium: false,
-    			premiumTime: 0
+    			premiumTime: 0,
+				defaultKey: key,
     		}
     		
     		await db.create(obj)

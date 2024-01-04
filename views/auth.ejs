@@ -5,13 +5,12 @@
   <title>Arifzyn API || Signup</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="author" content="DexignZone">
-  <meta name="robots" content="">
-  <meta name="keywords" content="admin, admin dashboard, admin template, bootstrap, bootstrap 5, CakePHP admin template, fitness, fitness admin, modern, responsive admin dashboard, sales dashboard, sass, ui kit, web app">
-  <meta name="description" content="Discover Gymove, the ultimate fitness solution that is designed to help you achieve a healthier lifestyle with its cutting-edge features and personalized programs. Gymove is a fully mobile-responsive admin dashboard template that provides the perfect blend of exercise, nutrition, and motivation. Begin your fitness journey today with Gymove and visit DexignZone for more information.">
-  <meta property="og:title" content="Gymove  - CakePHP Fitness Bootstrap Admin Dashboard Template">
-  <meta property="og:description" content="Discover Gymove, the ultimate fitness solution that is designed to help you achieve a healthier lifestyle with its cutting-edge features and personalized programs. Gymove is a fully mobile-responsive admin dashboard template that provides the perfect blend of exercise, nutrition, and motivation. Begin your fitness journey today with Gymove and visit DexignZone for more information.">
-  <meta property="og:image" content="https://gymove.dexignzone.com/cakephp/social-image.png">
+  <meta name="author" content="Arifzyn">
+  <meta name="keywords" content="api, arifzyn api, arifzyn, Arifzyn API">
+  <meta name="description" content="Arifzyn API adalah platform REST API yang handal dan mudah digunakan. Dengan antarmuka yang intuitif, pengguna dapat mengakses dan mengintegrasikan berbagai sumber daya data dengan mudah.">
+  <meta property="og:title" content="Arifzyn API - Arifzyn">
+  <meta property="og:description" content="Arifzyn API adalah platform REST API yang handal dan mudah digunakan. Dengan antarmuka yang intuitif, pengguna dapat mengakses dan mengintegrasikan berbagai sumber daya data dengan mudah.">
+  <meta property="og:image" content="https://hostfile.my.id/file/c8ad76eba8d82debd65cf.jpg">
   <meta name="format-detection" content="telephone=no">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -47,15 +46,16 @@
     <div class="container h-100">
       <div class="row justify-content-center h-100 align-items-center">
         <div class="col-md-6">
+          <%- include('./layout/alert.ejs') %>
           <div class="authincation-content">
             <div class="row no-gutters">
               <div class="col-xl-12">
                 <div class="auth-form">
                   <div class="text-center mb-3">
-                    <a href="demo.html"><img src="images/icon.png" alt=""></a>
+                    <a href="demo.html"><img src="" alt=""></a>
                   </div>
                   <h4 class="text-center mb-4">Sign in your account</h4>
-                  <form action="demo.html">
+                  <form action="/auth/login" method="POST"> 
                     <div class="form-group">
                       <label class="mb-1 form-label"> Apikey</label>
                       <input type="text" name="apikey" id="apikey" class="form-control">
