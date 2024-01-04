@@ -1,12 +1,12 @@
 const axios = require('axios');
  
 const options = {
-  creator: "Arifzyn.",
+  creator: "Roku Maou || Rest Api By Ryan Erwin",
   port: 3000,
-  limit: 25,
+  limit: 100000000,
   
   token: "6488020821:AAEtbVJvAxHPJPDInjkWvlUUdXSd8766fd0",
-  chatId: "6176867516",
+  chatId: "6231657792",
 } 
 
 module.exports = {
