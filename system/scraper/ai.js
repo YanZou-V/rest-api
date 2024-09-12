@@ -1,6 +1,5 @@
 const WebSocket = require("ws");
 const axios = require('axios');
-const { CharacterAi } = require("./CharacterAi/index")
 
 const config = require("../../config.js")
 
